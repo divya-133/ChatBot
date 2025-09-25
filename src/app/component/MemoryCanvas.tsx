@@ -1,107 +1,3 @@
-// "use client";
-
-// import { useEffect } from "react";  
-// import ReactFlow, {
-//   Background,
-//   Controls,
-//   MiniMap,
-//   useEdgesState,
-//   useNodesState,
-// } from "reactflow";
-// import "reactflow/dist/style.css";
-
-
-// interface NodeData {
-//   id: string;
-//   label: string;
-//   type: "user" | "bot" | "file";
-// }
-
-// interface MemoryCanvasProps {
-//   messages: { sender: "user" | "bot"; text: string }[];
-//   fileName?: string | null;
-// }
-
-// export default function MemoryCanvas({ messages, fileName }: MemoryCanvasProps) {
-//   const [nodes, setNodes, onNodesChange] = useNodesState([]);
-//   const [edges, setEdges, onEdgesChange] = useEdgesState([]);
-
-//   useEffect(() => {
-//     const newNodes: any[] = [];
-//     const newEdges: any[] = [];
-
-//     messages.forEach((msg, index) => {
-//       const id = `node-${index}`;
-//       newNodes.push({
-//         id,
-//         data: { label: `${msg.sender === "user" ? "👤" : "🤖"} ${msg.text}` },
-//         position: { x: Math.random() * 500, y: index * 100 },
-//         style: {
-//           background: msg.sender === "user" ? "#3b82f6" : "#9333ea",
-//           color: "white",
-//           padding: 10,
-//           borderRadius: 12,
-//           fontSize: 12,
-//         },
-//       });
-
-//       if (index > 0) {
-//         newEdges.push({
-//           id: `edge-${index}`,
-//           source: `node-${index - 1}`,
-//           target: id,
-//           animated: true,
-//           style: { stroke: "#888" },
-//         });
-//       }
-//     });
-
-//     if (fileName) {
-//       newNodes.push({
-//         id: "file-node",
-//         data: { label: `📂 ${fileName}` },
-//         position: { x: 250, y: -100 },
-//         style: {
-//           background: "#16a34a",
-//           color: "white",
-//           padding: 10,
-//           borderRadius: 12,
-//         },
-//       });
-
-//       // Connect file node to first message
-//       if (messages.length > 0) {
-//         newEdges.push({
-//           id: "file-edge",
-//           source: "file-node",
-//           target: "node-0",
-//           animated: true,
-//           style: { stroke: "#16a34a" },
-//         });
-//       }
-//     }
-
-//     setNodes(newNodes);
-//     setEdges(newEdges);
-//   }, [messages, fileName]);
-
-//   return (
-//     <div style={{ height: 500, width: "100%" }} className="rounded-xl shadow-lg border">
-//       <ReactFlow
-//         nodes={nodes}
-//         edges={edges}
-//         onNodesChange={onNodesChange}
-//         onEdgesChange={onEdgesChange}
-//         fitView
-//       >
-//         <Background gap={16} color="#aaa" />
-//         <MiniMap />
-//         <Controls />
-//       </ReactFlow>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useEffect, useState } from "react";
@@ -113,6 +9,8 @@ import ReactFlow, {
   useNodesState,
 } from "reactflow";
 import "reactflow/dist/style.css";
+import pdfParse from "pdf-parse";
+import mammoth from "mammoth";
 
 interface MemoryCanvasProps {
   messages: { sender: "user" | "bot"; text: string }[];
