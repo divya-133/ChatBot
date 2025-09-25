@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 Smart Chatbot  
 
-## Getting Started
+A modern AI-powered chatbot built with **Next.js, TypeScript, and OpenAI API**, featuring a sleek UI, dark/light themes, voice input, file uploads, and persistent chat sessions.  
 
-First, run the development server:
+---
 
+## ✨ Features  
+
+- 💬 **AI Conversations** – Chat with an assistant powered by OpenAI  
+- 🕒 **Chat History** – Sessions stored locally for seamless continuity  
+- 🎨 **Dark & Light Themes** – Beautiful, consistent UI with one-click toggle  
+- 🎙️ **Voice-to-Text Input** – Speak directly using browser speech recognition  
+- 📂 **File Upload Support** – Upload and reference documents in conversations  
+- 🧩 **Sidebar Navigation** – Create, rename, and delete chat sessions with ease  
+- 📱 **Responsive UI** – Optimized for desktop and mobile devices  
+- ⚡ **Streaming Responses** – GPT-style typing effect for real-time replies  
+- 🔒 **Secure API Integration** – Environment variables keep your keys safe  
+
+---
+
+## 🛠️ Tech Stack  
+
+**Frontend**  
+- [Next.js (App Router)](https://nextjs.org/)  
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)  
+- [TailwindCSS](https://tailwindcss.com/)  
+- [Framer Motion](https://www.framer.com/motion/)  
+- [Lucide Icons](https://lucide.dev/)  
+- [React Markdown](https://github.com/remarkjs/react-markdown)  
+- [Rehype Highlight](https://github.com/rehypejs/rehype-highlight)  
+
+**Backend / API**  
+- [OpenAI Node SDK](https://github.com/openai/openai-node)  
+- Next.js API Routes  
+
+**Other**  
+- LocalStorage for session persistence  
+- Vercel for hosting  
+
+---
+
+## 🚀 Getting Started  
+
+### 1. Clone the Repository  
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+git clone https://github.com/yourusername/smart-chatbot.git
+cd smart-chatbot
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
